@@ -1,0 +1,29 @@
+.main {
+    display: flex;
+    width: 100%;
+}
+
+.listWrapper {
+    max-height: 500px;
+    max-width: 1080px;
+    overflow-y: scroll;
+    border-right: 1px solid rgb(145, 145, 180);
+}
+
+.listWrapper::-webkit-scrollbar-track {
+    background-color: #F5F5F5;
+}
+
+.listWrapper::-webkit-scrollbar {
+    width: 5px;
+    background-color: rgb(255, 255, 255);
+}
+
+.listWrapper::-webkit-scrollbar-thumb {
+    height: 50px;
+    background-color: rgb(65, 53, 230);
+}
+
+.fieldWrapper {
+    margin-left: 25px; 
+}
