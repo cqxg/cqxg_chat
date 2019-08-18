@@ -23,7 +23,7 @@ class Main extends React.Component {
     }
 
     connecting() {
-        this._websocket = new WebSocket('ws://st-chat.shas.tel');
+        this._websocket = new WebSocket('wss://wssproxy.herokuapp.com/ ');
         this._websocket.onopen = () => {
             console.log('open');
             this.setState({ connect: true });
