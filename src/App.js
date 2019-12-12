@@ -1,17 +1,17 @@
-import React from 'react';
-import Main from './components/Main/Main';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import './App.css';
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 
-function App() {
-  return (
-    <>
-        <Header /> 
-        <Main />
-        <Footer />
-    </> 
-  );
-}
+import { Auth, Main } from 'pages';
+
+class App extends Component {
+  render() {
+    return (
+      <div className="wrapper">
+        <Route exact path={['/', '/login']} component={Auth} />
+        <Route exact path='/Main' component={Main} />
+      </div>
+    )
+  };
+};
 
 export default App;

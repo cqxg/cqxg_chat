@@ -1,8 +1,7 @@
 import React from 'react';
-import MessageCont from '../Dashboard/MessageCont';
-import SendMessageForm from '../Dashboard/SendMessageForm'
-import '../Styles/MainStyle.css';
+import { Message } from 'components';
 
+import './Main.scss';
 
 class Main extends React.Component {
     constructor() {
@@ -14,23 +13,18 @@ class Main extends React.Component {
             user: 'user',
         };
 
-        this.changeName = this.changeName.bind(this);
-        this.getNameFromStorage = this.getNameFromStorage.bind(this);
-        this.sendMessage = this.sendMessage.bind(this);
-        this.connecting = this.connecting.bind(this);
-
         this.connecting();
-    }
+    };
 
     connecting() {
         this._websocket = new WebSocket('wss://wssproxy.herokuapp.com/ ');
         this._websocket.onopen = () => {
             console.log('open');
             this.setState({ connect: true });
-            this.getNameFromStorage();
         }
         this._websocket.onmessage = (e) => {
             const mess = JSON.parse(e.data);
+            console.log(JSON.parse(e.data));
             this.setState((state) => ({
                 messages: [...state.messages, ...mess],
             }));
@@ -43,16 +37,6 @@ class Main extends React.Component {
         };
     }
 
-    getNameFromStorage() {
-        const newName = JSON.parse(localStorage.getItem('name'));
-        if (newName) this.changeName(newName);
-    }
-
-    changeName(newName = 'user') {
-        localStorage.setItem('name', JSON.stringify(newName));
-        this.setState({ user: newName });
-    }
-
     sendMessage(message) {
         this._websocket.send(JSON.stringify(message));
     }
@@ -61,16 +45,31 @@ class Main extends React.Component {
         const { messages, user, connect } = this.state;
         return (
             <main className='main'>
-                <MessageCont messages={messages} userName={user} connect={connect}/>
-                <SendMessageForm
+                <Message
                     user={user}
-                    changeName={this.changeName}
+                    avatar='https://i.pinimg.com/236x/af/bb/82/afbb828cb5350d267e6dbeba042e85eb--anonymous-mask-guy-fawkes.jpg'
                     sendMessage={this.sendMessage}
+                    date='21:31 sep 2019'
                 />
             </main>
         );
     }
 }
 
-export default Main;
+// const Main = () => (
+//     <section className='main'>
+//         <Message
+//             avatar='https://i.pinimg.com/236x/af/bb/82/afbb828cb5350d267e6dbeba042e85eb--anonymous-mask-guy-fawkes.jpg'
+//             text='Просто любое рандомное хз то есть сообщение'
+//             date='21:31 sep 2019'
+//         />
+//         <Message avatar='https://i.pinimg.com/236x/af/bb/82/afbb828cb5350d267e6dbeba042e85eb--anonymous-mask-guy-fawkes.jpg'
+//             text='Hello world!'
+//             date='21:31 sep 2019'
+//             isMe={true}
+//             isReaded={true}
+//         />
+//     </section>
+// );
 
+export default Main;
