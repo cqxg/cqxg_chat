@@ -34,10 +34,6 @@
         "html-webpack-plugin": "4.0.0-beta.5",
         "identity-obj-proxy": "3.0.0",
         "is-wsl": "^1.1.0",
-        "jest": "24.9.0",
-        "jest-environment-jsdom-fourteen": "0.1.0",
-        "jest-resolve": "24.9.0",
-        "jest-watch-typeahead": "0.4.0",
         "material-ui": "^0.20.2",
         "mini-css-extract-plugin": "0.8.0",
         "node-sass": "^4.13.0",
@@ -89,54 +85,6 @@
             "last 1 chrome version",
             "last 1 firefox version",
             "last 1 safari version"
-        ]
-    },
-    "jest": {
-        "roots": [
-            "<rootDir>/src"
-        ],
-        "collectCoverageFrom": [
-            "src/**/*.{js,jsx,ts,tsx}",
-            "!src/**/*.d.ts"
-        ],
-        "setupFiles": [
-            "react-app-polyfill/jsdom"
-        ],
-        "setupFilesAfterEnv": [],
-        "testMatch": [
-            "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
-            "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
-        ],
-        "testEnvironment": "jest-environment-jsdom-fourteen",
-        "transform": {
-            "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
-            "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-            "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
-        },
-        "transformIgnorePatterns": [
-            "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
-            "^.+\\.module\\.(css|sass|scss)$"
-        ],
-        "modulePaths": [],
-        "moduleNameMapper": {
-            "^react-native$": "react-native-web",
-            "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
-        },
-        "moduleFileExtensions": [
-            "web.js",
-            "js",
-            "web.ts",
-            "ts",
-            "web.tsx",
-            "tsx",
-            "json",
-            "web.jsx",
-            "jsx",
-            "node"
-        ],
-        "watchPlugins": [
-            "jest-watch-typeahead/filename",
-            "jest-watch-typeahead/testname"
         ]
     },
     "babel": {
