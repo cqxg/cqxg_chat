@@ -8,10 +8,10 @@ class App extends Component {
     return (
       <div className="wrapper">
         <Route exact path={['/', '/login']} component={Auth} />
-        <Route exact path='/Main' component={Main} />
+        <Route exact path="/Main" component={Main} />
       </div>
-    )
-  };
-};
+    );
+  }
+}
 
 export default App;
