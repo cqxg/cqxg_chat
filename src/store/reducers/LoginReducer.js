@@ -1,20 +1,20 @@
 import { LOGIN, RELOGIN } from "../actions/ActionTypes";
 
 const loginReducer = () => {
-    switch (action.type) {
-        case LOGIN:
-            return {
+    // switch (action.type) {
+    //     case LOGIN:
+    //         return {
 
-            };
+    //         };
 
-        case RELOGIN:
-            return {
+    //     case RELOGIN:
+    //         return {
 
-            };
+    //         };
 
-        default:
-            return state;
-    }
+    //     default:
+    //         return state;
+    // }
 };
 
 export { loginReducer };
