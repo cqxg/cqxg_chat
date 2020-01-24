@@ -2,7 +2,7 @@ import { LOGIN, RELOGIN } from '../actions/ActionTypes';
 
 const initialState = {
     id: '',
-    from: '',
+    from: 'Vasiliy',
 };
 
 const loginReducer = (state = initialState, action) => {

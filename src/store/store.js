@@ -4,7 +4,7 @@ import { loginReducer } from './reducers/LoginReducer';
 // import { mainReducer } from './reducers/MainReducer';
 
 const reducers = combineReducers({
-    loginPage: loginReducer,
+    login: loginReducer,
     // mainPage: mainReducer,
 });
 

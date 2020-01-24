@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { login,  } from '../../store/actions/ActionCreators';
+
 import LoginForm from './LoginForm';
 
 class LoginContainer extends Component {
@@ -30,4 +32,4 @@ const mapStateToProps = (state) => ({
     from: state.from,
 });
 
-export default connect(mapStateToProps, {})(LoginContainer);
+export default connect(mapStateToProps, { login })(LoginContainer);

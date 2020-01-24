@@ -1,6 +1,6 @@
 import { LOGIN, RELOGIN, SEND_MESSAGE } from "./ActionTypes";
 
-const login = () => ({ type: LOGIN });
+const login = (from) => ({ type: LOGIN, from });
 const relogin = () => ({ type: RELOGIN });
 const sendMessage = () => ({ type: SEND_MESSAGE });
 
