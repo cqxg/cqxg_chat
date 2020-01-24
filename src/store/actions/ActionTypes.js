@@ -1,0 +1,5 @@
+const LOGIN = 'LOGIN';
+const RELOGIN = 'RELOGIN';
+const SEND_MESSAGE = 'SEND-MESSAGE';
+
+export { LOGIN, RELOGIN, SEND_MESSAGE };
