@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import './LoginForm.css'
 
@@ -14,7 +15,9 @@ const LoginForm = (props) => {
             <h1>Login</h1>
             <form method="post">
                 <input type="text" name="u" placeholder="Username" required="required" value={props.from} onChange={submit} />
-                <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
+                <NavLink to='/main'>
+                    <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
+                </NavLink>
             </form>
         </div>
     )

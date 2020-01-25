@@ -1,30 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
-import { login,  } from '../../store/actions/ActionCreators';
+import { login, } from '../../store/actions/ActionCreators';
 
 import LoginForm from './LoginForm';
 
-class LoginContainer extends Component {
-
-    // componentDidMount() {
-    //     const websocket = new WebSocket('wss://wssproxy.herokuapp.com/ ');
-    //     websocket.onopen = () => {
-    //         console.log('open');
-    //     }
-    //     websocket.onmessage = (e) => {
-    //         const messages = JSON.parse(e.data);
-    //         console.log(messages);
-    //     };
-    // };
-
-    render() {
-        return (
-            <LoginForm
-                login={this.props.login}
-            />
-        )
-    }
+const LoginContainer = (props) => {
+    
+    return <LoginForm login={props.login} />
 };
 
 const mapStateToProps = (state) => ({

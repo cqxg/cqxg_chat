@@ -1,8 +1,7 @@
-import { LOGIN, RELOGIN } from '../actions/ActionTypes';
+import { LOGIN } from '../actions/ActionTypes';
 
 const initialState = {
-    id: '',
-    from: 'Vasiliy',
+    from: '',
 };
 
 const loginReducer = (state = initialState, action) => {
@@ -10,14 +9,8 @@ const loginReducer = (state = initialState, action) => {
         case LOGIN:
             return {
                 ...state,
-                id: action.id,
                 from: action.from,
             };
-
-        // case RELOGIN:
-        //     return {
-
-        //     };
 
         default:
             return state;
