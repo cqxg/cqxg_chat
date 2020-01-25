@@ -1,0 +1,9 @@
+.content {
+    min-height: calc(100vh - 80px);
+}
+
+.myMessage {
+    width: 60%; 
+    margin-left: 10px;
+}
+

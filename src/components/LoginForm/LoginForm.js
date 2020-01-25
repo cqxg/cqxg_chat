@@ -1,13 +1,12 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 
 import './LoginForm.css'
 
-const LoginForm = (props) => {
+const LoginForm = () => {
 
     const submit = (e) => {
         const name = e.target.value;
-        props.login(name)
+        localStorage.setItem('username', name);
     };
 
     return (

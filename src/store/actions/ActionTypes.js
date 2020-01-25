@@ -1,4 +1,0 @@
-const LOGIN = 'LOGIN';
-const SEND_MESSAGE = 'SEND-MESSAGE';
-
-export { LOGIN, SEND_MESSAGE };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import LoginForm from './components/LoginForm/LoginContainer';
+import LoginForm from './components/LoginForm/LoginForm';
 import Main from './components/Main/Main';
 
 const App = () => {
