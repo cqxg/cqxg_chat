@@ -8,7 +8,7 @@ const App = () => {
 
     return (
         <BrowserRouter>
-            <Route path="/" render={() => <LoginForm />} />
+            <Route exact path="/" render={() => <LoginForm />} />
             <Route path="/main" render={() => <Main />} />
         </BrowserRouter>
     );

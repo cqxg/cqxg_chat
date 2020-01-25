@@ -12,6 +12,12 @@ class Main extends Component {
             console.log(messages);
         };
     };
+
+    render() {
+        return (
+            <div></div>
+        );
+    };
 };
 
 export default Main;
