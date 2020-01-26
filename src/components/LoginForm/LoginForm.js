@@ -1,6 +1,11 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { Form, Icon, Input } from 'antd';
 
-import './LoginForm.css';
+import Block from '../Block/Block';
+import Button from '../Button/Button';
+
+import './LoginForm.scss';
 
 const LoginForm = () => {
 
@@ -10,15 +15,37 @@ const LoginForm = () => {
     };
 
     return (
-        <div className='block'>
-            <div className='auth_top'>
-                <h2>Log in</h2>
-                <p>Please enter your username</p>
-            </div>
-            <form className='form' action="/main">
-                <input type="text" name="user" placeholder="Username" required="required" onChange={auth} />
-                <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
-            </form>
+
+        <div className='wrapper'>
+            <section className='auth'>
+                <div className={`auth__content`}>
+                    <div className={`auth__top`}>
+                        <h2>Connect to chat</h2>
+                        <p>Please enter your username</p>
+                    </div>
+                    <Block>
+                        <Form className="login-form" action="/main">
+                            <Form.Item hasFeedback>
+                                <Input
+                                    onChange={auth}
+                                    prefix={
+                                        <Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />
+                                    }
+                                    placeholder="Username"
+                                    size='large'
+                                />,
+                            </Form.Item>
+                            <Form.Item>
+                                <NavLink to='/main'>
+                                <Button type='primary' size='large'>
+                                        Let me in!
+                                </Button>
+                                </NavLink>
+                            </Form.Item>
+                        </Form>
+                    </Block>
+                </div>
+            </section>
         </div>
     )
 };
