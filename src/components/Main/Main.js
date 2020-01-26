@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import { Input } from 'antd';
 
 import './Main.scss';
@@ -14,6 +15,7 @@ class Main extends Component {
             user: 'user',
         };
 
+        this.isMe = false;
         // this.chatEnd = React.createRef();
         // this.scrolling = () => this.chatEnd.current.scrollIntoView({ block: 'nearest' });
     };
@@ -26,24 +28,25 @@ class Main extends Component {
         }
         this._websocket.onmessage = (e) => {
             const messages = JSON.parse(e.data);
-            console.log(messages);
             this.setState((state) => ({
                 messages: [...state.messages, ...messages],
             }));
         };
-
     };
 
     goMap = () => {
         const newMap = this.state.messages.map((user) => (
-            <div>
-                <span>
-                    {user.from}
-                </span>
-                <span>
-                    {user.message}
-                </span>
-            </div>
+            <div className={user.from === localStorage.name ? 'message--isme' : 'message'}>
+                <div className='message__avatar'>
+                    <img src='https://i.pinimg.com/236x/af/bb/82/afbb828cb5350d267e6dbeba042e85eb--anonymous-mask-guy-fawkes.jpg' />
+                </div>
+                <div className='message__content'>
+                    <div className='message__bubble'>
+                        <p className='message__text'>{user.message}</p>
+                    </div>
+                    <span className='message__sender'>{user.from}</span>
+                </div>
+            </div >
         ));
 
         return newMap;
@@ -56,7 +59,6 @@ class Main extends Component {
 
     sendMessage = (e) => {
         const text = e.target.value;
-
         const message = {
             from: `${localStorage.name}`,
             message: `${text}`,
@@ -64,7 +66,6 @@ class Main extends Component {
 
         if (e.key === 'Enter') {
             e.target.value = '';
-            console.log(text)
             // this.scrolling();
             this._websocket.send(JSON.stringify(message));
         }
