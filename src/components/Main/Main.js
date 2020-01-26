@@ -12,55 +12,71 @@ class Main extends Component {
             messages: [],
             user: 'user',
         };
+
+        this.chatEnd = React.createRef();
+        this.scrolling = () => this.chatEnd.current.scrollIntoView({ block: 'nearest' });
     };
 
     componentDidMount() {
-        const websocket = new WebSocket('wss://wssproxy.herokuapp.com/ ');
-        websocket.onopen = () => {
+        this._websocket = new WebSocket('wss://wssproxy.herokuapp.com/ ');
+        this._websocket.onopen = () => {
+            this.setState({ connect: true });
             console.log('open');
         }
-        websocket.onmessage = (e) => {
+        this._websocket.onmessage = (e) => {
             const messages = JSON.parse(e.data);
             console.log(messages);
             this.setState((state) => ({
                 messages: [...state.messages, ...messages],
             }));
         };
+
     };
 
     goMap = () => {
         const newMap = this.state.messages.map((user) => (
             <div>
-                <div>
+                <span>
                     {user.from}
-                </div>
-                <div>
+                </span>
+                <span>
                     {user.message}
-                </div>
+                </span>
             </div>
         ));
 
         return newMap;
     };
 
-    getNameFromStorage() {
-        const newName = JSON.parse(localStorage.getItem('name'));
-        if (newName) this.changeName(newName);
-    }
-
     changeName(newName = 'user') {
         localStorage.setItem('name', JSON.stringify(newName));
         this.setState({ user: newName });
     }
 
+    sendMessage = (e) => {
+        const text = e.target.value;
+
+        const message = {
+            from: `${localStorage.name}`,
+            message: `${text}`,
+        };
+
+        if (e.key === 'Enter') {
+            e.target.value = '';
+            console.log(text)
+            this.scrolling();
+            this._websocket.send(JSON.stringify(message));
+        }
+    };
+
     render() {
         return (
-            <div>
+            <React.Fragment>
                 <div className='content'>
                     {this.goMap()}
                 </div>
-                <input className='myMessage' type="text" placeholder="Message" />
-            </div>
+                <input ref={this.chatEnd} onKeyPress={this.sendMessage} className='myMessage' type="text" placeholder="Message" />
+            </React.Fragment>
         );
     };
 };

@@ -1,20 +1,23 @@
 import React from 'react';
 
-import './LoginForm.css'
+import './LoginForm.css';
 
 const LoginForm = () => {
 
-    const submit = (e) => {
+    const auth = (e) => {
         const name = e.target.value;
-        localStorage.setItem('username', name);
+        localStorage.setItem('name', name);
     };
 
     return (
-        <div class="login">
-            <h1>Login</h1>
-            <form action="/main">
-                <input type="text" name="user" placeholder="Username" required="required"  onChange={submit} />
-                    <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
+        <div className='block'>
+            <div className='auth_top'>
+                <h2>Log in</h2>
+                <p>Please enter your username</p>
+            </div>
+            <form className='form' action="/main">
+                <input type="text" name="user" placeholder="Username" required="required" onChange={auth} />
+                <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
             </form>
         </div>
     )
