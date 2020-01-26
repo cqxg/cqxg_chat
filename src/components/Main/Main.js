@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { Input } from 'antd';
+
+import './Main.scss';
 
 class Main extends Component {
 
@@ -11,8 +14,8 @@ class Main extends Component {
             user: 'user',
         };
 
-        this.chatEnd = React.createRef();
-        this.scrolling = () => this.chatEnd.current.scrollIntoView({ block: 'nearest' });
+        // this.chatEnd = React.createRef();
+        // this.scrolling = () => this.chatEnd.current.scrollIntoView({ block: 'nearest' });
     };
 
     componentDidMount() {
@@ -62,7 +65,7 @@ class Main extends Component {
         if (e.key === 'Enter') {
             e.target.value = '';
             console.log(text)
-            this.scrolling();
+            // this.scrolling();
             this._websocket.send(JSON.stringify(message));
         }
     };
@@ -73,7 +76,14 @@ class Main extends Component {
                 <div className='content'>
                     {this.goMap()}
                 </div>
-                <input ref={this.chatEnd} onKeyPress={this.sendMessage} className='myMessage' type="text" placeholder="Message" />
+                <Input
+                    className='myMessage'
+                    onKeyPress={this.sendMessage}
+                    // ref={this.chatEnd}
+                    placeholder="Message"
+                    size='large'
+                />,
+                {/* <input className='myMessage' type="text" placeholder="Message" /> */}
             </React.Fragment>
         );
     };
