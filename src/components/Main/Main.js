@@ -32,7 +32,7 @@ class Main extends Component {
     };
 
     connect = () => {
-        this._websocket = new WebSocket(`wss://wssproxy.herokuapp.com/`);
+        this._websocket = new WebSocket('wss://wssproxy.herokuapp.com/');
         this._websocket.onopen = () => {
             this.setState({ connect: true });
         };
