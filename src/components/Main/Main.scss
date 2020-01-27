@@ -15,6 +15,13 @@
     box-shadow:0px 15px 41px 13px rgba(0,0,0,0.01);
 }
 
+.nocontent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
 .myText {
     height: 40px;
     width: 100%;
@@ -26,12 +33,12 @@
     box-sizing: border-box;
     background-image: none;
     background-color: #fff;
-    border: 1px solid #d6d6d6;
+    border: 1px solid #a5a5a5;
     color: rgba(0, 0, 0, 0.65);
 }
 
 .myText::placeholder{
-    color: #d6d6d6;
+    color: #bbbbbb;
 }
 
 .button {
@@ -118,4 +125,19 @@
           }
         }
       }
+}
+
+@media (max-width: 600px) { 
+    .wrapper {
+        height: 90vh;
+        width: 350px;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .message {
+        max-width: 95%;
+    }
 }
