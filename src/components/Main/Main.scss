@@ -1,3 +1,43 @@
+.wrapper {
+    width: 633px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.content {
+    width: 650px;
+    height: 80vh;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    overflow-x: hidden;
+    border: 1px solid #ebebeb;
+    box-shadow:0px 15px 41px 13px rgba(0,0,0,0.01);
+}
+
+.myText {
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 6px 11px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    background-image: none;
+    background-color: #fff;
+    border: 1px solid #d6d6d6;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.myText::placeholder{
+    color: #d6d6d6;
+}
+
+.button {
+    margin-top: 5px;
+}
+
 .message {
     $self: &;
 
@@ -21,7 +61,6 @@
         }
 
     }
-
 
     &__bubble {
         background: #3674ff;
