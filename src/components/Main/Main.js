@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { AVATAR, SOCKET, RELOGIN } from '../../utils/const';
+import { AVATAR, RELOGIN } from '../../utils/const';
 import Preloader from '../../utils/preloader';
 
 import Button from '../Button/Button';
@@ -32,7 +32,7 @@ class Main extends Component {
     };
 
     connect = () => {
-        this._websocket = new WebSocket(`wss://${SOCKET}`);
+        this._websocket = new WebSocket(`wss://wssproxy.herokuapp.com/`);
         this._websocket.onopen = () => {
             this.setState({ connect: true });
         };
