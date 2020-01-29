@@ -20,7 +20,7 @@ class Main extends Component {
 
         this._websocket = null;
         this.chatEnd = React.createRef();
-        this.scrolling = () => this.chatEnd.current.scrollIntoView({ block: 'nearest' });
+        // this.scrolling = () => this.chatEnd.current.scrollIntoView({ block: 'nearest' });
     };
 
     componentDidMount() {
@@ -38,8 +38,10 @@ class Main extends Component {
         };
         this._websocket.onmessage = (e) => {
             const messages = JSON.parse(e.data).reverse();
-            this.setState((state) => ({ messages: [...state.messages, ...messages]}));
-            this.scrolling();
+            this.setState(
+                (state) => ({ messages: [...state.messages, ...messages] }),
+                () => this.chatEnd.current.scrollIntoView({ block: 'nearest' })
+                );
         };
     };
 
@@ -87,8 +89,8 @@ class Main extends Component {
                         {RELOGIN}
                     </Button>
                 </NavLink>
-                <div className={this.state.connect === false ? 'nocontent' : 'content' }>
-                {this.state.connect === false ? <Preloader /> : this.goMap()}
+                <div className={this.state.connect === false ? 'nocontent' : 'content'}>
+                    {this.state.connect === false ? <Preloader /> : this.goMap()}
                 </div>
                 <input onKeyPress={this.sendMessage} className='myText' type='text' placeholder='Enter your message...' />
             </div>
