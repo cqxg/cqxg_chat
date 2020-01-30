@@ -20,15 +20,10 @@ class Main extends Component {
 
         this._websocket = null;
         this.chatEnd = React.createRef();
-        // this.scrolling = () => this.chatEnd.current.scrollIntoView({ block: 'nearest' });
     };
 
     componentDidMount() {
         this.connect();
-        this._websocket.onclose = () => {
-            this.connect();
-            this.setState({ connect: false });
-        };
     };
 
     connect = () => {
@@ -36,12 +31,20 @@ class Main extends Component {
         this._websocket.onopen = () => {
             this.setState({ connect: true });
         };
+
         this._websocket.onmessage = (e) => {
             const messages = JSON.parse(e.data).reverse();
             this.setState(
                 (state) => ({ messages: [...state.messages, ...messages] }),
                 () => this.chatEnd.current.scrollIntoView({ block: 'nearest' })
-                );
+            );
+        };
+
+        this._websocket.onclose = () => {
+            this.setState({ connect: false });
+            setTimeout(() => {
+                this.connect();
+            }, 1000);
         };
     };
 
@@ -69,6 +72,10 @@ class Main extends Component {
     };
 
     sendMessage = (e) => {
+        if (localStorage.name === undefined) {
+            localStorage.name = 'Anonymous';
+        };
+
         let text = e.target.value;
         const message = {
             message: `${text}`,
