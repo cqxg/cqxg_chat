@@ -50,7 +50,7 @@ class Main extends Component {
 
     goMap = () => {
         const newMap = this.state.messages.map((user) => (
-            <div className={user.from === localStorage.name ? 'message--isme' : 'message'} >
+            <div className={user.from === localStorage.name ? 'message--isme' : 'message'} key={user.time} >
                 <div className='message__avatar' >
                     <img src={AVATAR} />
                 </div>
