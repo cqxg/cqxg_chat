@@ -60,7 +60,7 @@ class Main extends Component {
                     </div>
                     <span className='message__sender' ref={this.chatEnd} >{user.from}</span>
                 </div>
-            </div >
+            </div>
         ));
 
         return newMap;
