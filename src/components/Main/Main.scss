@@ -51,6 +51,7 @@
     display: flex;
     max-width: 440px;
     margin-bottom: 15px;
+    margin-left: 5px;
 
     &__avatar {
         display: flex;
@@ -90,6 +91,7 @@
     &--isme {
         display: flex;
         flex-direction: row-reverse;
+        margin-right: 5px;
     
         .avatar {
           margin-left: 13px;
