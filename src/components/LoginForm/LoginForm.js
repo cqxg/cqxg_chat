@@ -35,7 +35,7 @@ const LoginForm = () => {
                                 />
                             </Form.Item>
                             <Form.Item>
-                                <NavLink to='/main'>
+                                <NavLink to='/chat'>
                                     <Button type='primary' size='large'>
                                         {LOGIN_BUTTON_TEXT}
                                     </Button>

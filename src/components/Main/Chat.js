@@ -8,6 +8,14 @@ import Button from '../Button/Button';
 
 import './Main.scss';
 
+const Chat = () => {
+    return (
+        <div>qq</div>
+    )
+};
+
+export default Chat;
+
 // const Main = () => {
 //     const [state, setState] = useState({
 //         user: 'user',
