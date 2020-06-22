@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Form, Icon, Input } from 'antd';
 
 import { LOGIN_H2, LOGIN_P, LOGIN_BUTTON_TEXT } from '../../utils/const';
@@ -39,11 +39,11 @@ const LoginForm = () => {
                                 />
                             </Form.Item>
                             <Form.Item>
-                                <NavLink to='/chat'>
+                                <Link onClick={e => (!name || !room) ? e.preventDefault() : null} to={`/chat?name=${name}&room=${room}`}>
                                     <Button type='primary' size='large'>
                                         {LOGIN_BUTTON_TEXT}
                                     </Button>
-                                </NavLink>
+                                </Link>
                             </Form.Item>
                         </Form>
                     </Block>
