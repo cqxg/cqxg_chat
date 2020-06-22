@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Form, Icon, Input } from 'antd';
 
@@ -10,6 +10,8 @@ import Button from '../Button/Button';
 import './LoginForm.scss';
 
 const LoginForm = () => {
+    const [name, setName] = useState('');
+    const [room, setRoom] = useState('');
 
     return (
         <div className='wrapper'>
@@ -21,11 +23,18 @@ const LoginForm = () => {
                     </div>
                     <Block>
                         <Form className='login-form' action='/main'>
-                            <Form.Item hasFeedback>
+                            <Form.Item>
                                 <Input
-                                    // onChange={auth}
+                                    onChange={(event) => setName(event.target.value)}
                                     prefix={<Icon type='user' style={{ color: 'rgba(0,0,0,.25)' }} />}
                                     placeholder='Username'
+                                    size='large'
+                                />
+                            </Form.Item>
+                            <Form.Item>
+                                <Input
+                                    onChange={(event) => setRoom(event.target.value)}
+                                    placeholder='Room name'
                                     size='large'
                                 />
                             </Form.Item>
