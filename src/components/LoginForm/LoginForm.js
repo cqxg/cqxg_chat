@@ -10,13 +10,8 @@ import Button from '../Button/Button';
 import './LoginForm.scss';
 
 const LoginForm = () => {
-    const auth = (e) => {
-        const name = e.target.value;
-        localStorage.setItem('name', name);
-    };
 
     return (
-
         <div className='wrapper'>
             <section className='auth'>
                 <div className='auth__content'>
@@ -28,7 +23,7 @@ const LoginForm = () => {
                         <Form className='login-form' action='/main'>
                             <Form.Item hasFeedback>
                                 <Input
-                                    onChange={auth}
+                                    // onChange={auth}
                                     prefix={<Icon type='user' style={{ color: 'rgba(0,0,0,.25)' }} />}
                                     placeholder='Username'
                                     size='large'
