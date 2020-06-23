@@ -8,9 +8,21 @@ import Button from '../Button/Button';
 
 import './Main.scss';
 
+let socket;
+
 const Chat = () => {
     return (
-        <div>qq</div>
+        <div className='chat'>
+            <NavLink to='/'>
+                <Button type='primary' size='small'>
+                    {RELOGIN}
+                </Button>
+            </NavLink>
+            <div>
+                <Preloader />
+            </div>
+            <input className='input' type='text' placeholder='Enter your message...' />
+        </div>
     )
 };
 
