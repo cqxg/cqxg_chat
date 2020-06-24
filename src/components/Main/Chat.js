@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import queryString from 'query-string';
+import io from "socket.io-client";
 
 import { AVATAR, RELOGIN } from '../../utils/const';
 import Preloader from '../../utils/preloader';
@@ -18,20 +20,21 @@ const Chat = () => {
     const [messages, setMessages] = useState([]);
 
     const ENDPOINT = 'http://localhost:3030';
-
     useEffect(() => {
+        //eslint-disable-next-line
         const { name, room } = queryString.parse(location.search);
 
         socket = io(ENDPOINT);
 
         setRoom(room);
-        setName(name)
+        setName(name);
 
         socket.emit('join', { name, room }, (error) => {
             if (error) {
                 alert(error);
-            }
+            };
         });
+        //eslint-disable-next-line
     }, [ENDPOINT, location.search]);
 
     useEffect(() => {
@@ -43,6 +46,14 @@ const Chat = () => {
             setUsers(users);
         });
     }, []);
+
+    const sendMessage = (event) => {
+        event.preventDefault();
+
+        if (message) {
+            socket.emit('sendMessage', message, () => setMessage(''));
+        };
+    };
 
     return (
         <div className='chat'>
