@@ -22,27 +22,6 @@
     height: 100%;
 }
 
-.input {
-    height: 40px;
-    width: 100%;
-    font-size: 16px;
-    line-height: 1.5;
-    padding: 6px 11px;
-    border-radius: 4px;
-    margin-bottom: 15px;
-    box-sizing: border-box;
-    background-image: none;
-    background-color: #fff;
-    border: 1px solid #a5a5a5;
-    color: rgba(0, 0, 0, 0.65);
-}
-
-.input:focus,
-.input::placeholder {
-    outline: none;
-    color: #bbbbbb;
-}
-
 .button {
     margin-top: 5px;
 }

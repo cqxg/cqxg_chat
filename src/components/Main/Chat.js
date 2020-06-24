@@ -7,6 +7,7 @@ import { AVATAR, RELOGIN } from '../../utils/const';
 import Preloader from '../../utils/preloader';
 
 import Button from '../Button/Button';
+import Input from '../Input/Input';
 
 import './Main.scss';
 
@@ -65,7 +66,7 @@ const Chat = () => {
             <div className='nocontent'>
                 <Preloader />
             </div>
-            <input className='input' type='text' placeholder='Enter your message...' />
+            <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
         </div>
     )
 };
