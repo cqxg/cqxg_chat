@@ -11,6 +11,12 @@ import './Main.scss';
 let socket;
 
 const Chat = () => {
+    const [name, setName] = useState('');
+    const [room, setRoom] = useState('');
+    const [users, setUsers] = useState('');
+    const [message, setMessage] = useState('');
+    const [messages, setMessages] = useState([]);
+
     return (
         <div className='chat'>
             <NavLink to='/'>
@@ -18,7 +24,7 @@ const Chat = () => {
                     {RELOGIN}
                 </Button>
             </NavLink>
-            <div>
+            <div className='nocontent'>
                 <Preloader />
             </div>
             <input className='input' type='text' placeholder='Enter your message...' />
