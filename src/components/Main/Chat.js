@@ -3,11 +3,12 @@ import { NavLink } from 'react-router-dom';
 import queryString from 'query-string';
 import io from "socket.io-client";
 
-import { AVATAR, RELOGIN } from '../../utils/const';
 import Preloader from '../../utils/preloader';
+import { AVATAR, RELOGIN } from '../../utils/const';
 
-import Button from '../Button/Button';
 import Input from '../Input/Input';
+import Button from '../Button/Button';
+import Messages from '../Messages/Messages';
 
 import './Main.scss';
 
@@ -66,6 +67,7 @@ const Chat = () => {
             <div className='nocontent'>
                 <Preloader />
             </div>
+            <Messages messages={messages} name={name} />
             <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
         </div>
     )
