@@ -17,6 +17,8 @@ const Chat = () => {
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
 
+    const ENDPOINT = 'http://localhost:3030';
+
     return (
         <div className='chat'>
             <NavLink to='/'>
