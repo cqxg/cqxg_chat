@@ -4,7 +4,7 @@ import queryString from 'query-string';
 import io from "socket.io-client";
 
 import Preloader from '../../utils/preloader';
-import { AVATAR, RELOGIN } from '../../utils/const';
+import { RELOGIN } from '../../utils/const';
 
 import Input from '../Input/Input';
 import Button from '../Button/Button';
@@ -21,7 +21,7 @@ const Chat = () => {
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
 
-    const ENDPOINT = 'http://localhost:3030';
+    const ENDPOINT = 'http://localhost:3001';
     useEffect(() => {
         //eslint-disable-next-line
         const { name, room } = queryString.parse(location.search);
