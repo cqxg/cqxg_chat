@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Button from '../Button/Button';
-
 import './Input.scss';
 
 const Input = ({ setMessage, sendMessage, message }) => (
@@ -14,9 +12,6 @@ const Input = ({ setMessage, sendMessage, message }) => (
             onChange={({ target: { value } }) => setMessage(value)}
             onKeyPress={event => event.key === 'Enter' ? sendMessage(event) : null}
         />
-        <Button type='primary' size='small' onClick={e => sendMessage(e)}>
-            Send
-        </Button>
     </form>
 )
 
