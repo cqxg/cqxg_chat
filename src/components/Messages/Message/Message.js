@@ -18,16 +18,16 @@ const Message = ({ message: { text, user }, name }) => {
     return (
         <div className={isSentByCurrentUser ? 'message--isme' : 'message'}>
             <div className='message__avatar' >
-                <img src={AVATAR} />
+                <img alt='' src={AVATAR} />
             </div>
             <div className='message__content'>
                 <div className='message__bubble'>
                     <p className='message__text'>{ReactEmoji.emojify(text)}</p>
                 </div>
-                <span className='message__sender' >{user}</span>
+                <span className='message__sender'>{user}</span>
             </div>
         </div>
     );
-}
+};
 
 export default Message;
