@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
 import queryString from 'query-string';
 import io from "socket.io-client";
 
-import { RELOGIN } from '../../utils/const';
-
 import Input from '../Input/Input';
-import Button from '../Button/Button';
 import Messages from '../Messages/Messages';
+import ReloginButton from '../Buttons/ReloginButton';
 
 import './Main.scss';
 
@@ -58,11 +55,7 @@ const Chat = () => {
 
     return (
         <div className='chat'>
-            <NavLink to='/'>
-                <Button type='primary' size='small'>
-                    {RELOGIN}
-                </Button>
-            </NavLink>
+            <ReloginButton />
             <div className='content'>
                 <Messages messages={messages} name={name} />
             </div>

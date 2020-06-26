@@ -5,7 +5,7 @@ import { Form, Icon, Input } from 'antd';
 import { LOGIN_H2, LOGIN_P, LOGIN_BUTTON_TEXT } from '../../utils/const';
 
 import Block from '../Block/Block';
-import Button from '../Button/Button';
+import Button from '../Buttons/Button';
 
 import './LoginForm.scss';
 

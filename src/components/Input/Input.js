@@ -13,6 +13,6 @@ const Input = ({ setMessage, sendMessage, message }) => (
             onKeyPress={event => event.key === 'Enter' ? sendMessage(event) : null}
         />
     </form>
-)
+);
 
 export default Input;
