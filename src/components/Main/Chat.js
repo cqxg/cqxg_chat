@@ -12,7 +12,9 @@ let socket;
 
 const Chat = () => {
     const [name, setName] = useState('');
+    //eslint-disable-next-line
     const [room, setRoom] = useState('');
+    //eslint-disable-next-line
     const [users, setUsers] = useState('');
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);

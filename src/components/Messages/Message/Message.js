@@ -1,5 +1,4 @@
 import React from 'react';
-
 import ReactEmoji from 'react-emoji';
 
 import { AVATAR } from '../../../utils/const';
