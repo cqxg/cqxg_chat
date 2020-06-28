@@ -3,8 +3,8 @@ import queryString from 'query-string';
 import io from "socket.io-client";
 
 import Input from '../Input/Input';
+import InfoBar from '../InfoBar/InfoBar';
 import Messages from '../Messages/Messages';
-import ReloginButton from '../Buttons/ReloginButton';
 
 import './Main.scss';
 
@@ -19,7 +19,7 @@ const Chat = () => {
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
 
-    const ENDPOINT = 'https://cqxg-chat-server.herokuapp.com/';
+    const ENDPOINT = 'https://project-chat-application.herokuapp.com/';
     useEffect(() => {
         //eslint-disable-next-line
         const { name, room } = queryString.parse(location.search);
@@ -57,7 +57,7 @@ const Chat = () => {
 
     return (
         <div className='chat'>
-            <ReloginButton />
+            <InfoBar room={room} />
             <div className='content'>
                 <Messages messages={messages} name={name} />
             </div>

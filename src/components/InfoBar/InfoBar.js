@@ -1,10 +1,19 @@
 import React from 'react';
 
-import './InfoBar.css';
+import ReloginButton from '../Buttons/ReloginButton';
 
-const InfoBar = () => (
+import online from '../../utils/online.png';
+
+import './InfoBar.scss';
+
+const InfoBar = ({ room }) => (
     <div className="infoBar">
-        info
+        <div className="leftInnerContainer">
+            <img className="onlineIcon" src={online} alt="online icon" />
+            <h3>{room}</h3>
+            <span className="desc">(room name)</span>
+        </div>
+        <ReloginButton />
     </div>
 );
 
