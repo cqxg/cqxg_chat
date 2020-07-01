@@ -10,16 +10,16 @@ const AsideBar = ({ users }) => (
             users
                 ? (
                     <div>
-                        <h1>People currently chatting:</h1>
+                        <h2>People currently chatting:</h2>
                         <div className="activeContainer">
-                            <h2>
+                            <h3>
                                 {users.map(({ name }) => (
                                     <div key={name} className="activeItem">
                                         {name}
                                         <img alt="Online Icon" src={online} />
                                     </div>
                                 ))}
-                            </h2>
+                            </h3>
                         </div>
                     </div>
                 )

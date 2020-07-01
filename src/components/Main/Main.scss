@@ -1,18 +1,18 @@
-.chat {
-    width: 633px;
-    margin: 0 auto;
-    overflow: hidden;
+.outerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.content {
-    width: 650px;
-    height: 80vh;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    border-radius: 15px;
-    overflow-x: hidden;
-    border: 1px solid #ebebeb;
-    box-shadow:0px 15px 41px 13px rgba(0,0,0,0.01);
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #FFFFFF;
+  border-radius: 8px;
+  height: 60%;
+  width: 35%;
 }
 
 .button {

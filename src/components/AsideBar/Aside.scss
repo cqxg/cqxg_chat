@@ -1,10 +1,11 @@
 .asideBar {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     margin-left: 100px;
     color: white;
+    font-size: 25px;
     height: 60%;
-    justify-content: space-between;
 }
   
 .activeContainer {
@@ -16,14 +17,17 @@
 .activeItem {
     display: flex;
     align-items: center;
+    margin-top: 10px;
 }
   
 .activeContainer img {
     padding-left: 10px;
 }
   
-.asideBar h1 {
+.asideBar h2 {
     margin-bottom: 0px;
+    font-size: 20px;
+    font-weight: bold;
 }
   
 @media (min-width: 320px) and (max-width: 1200px) {
