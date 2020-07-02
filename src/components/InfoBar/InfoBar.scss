@@ -1,9 +1,14 @@
 .infoBar {
+    width: 100%;
     display: flex;
     align-items: center;
+    background: #1b59bf;
+    border-radius: 5px 5px 0 0;
     justify-content: space-between;
-    border-radius: 4px 4px 0 0;
-    width: 100%;
+
+    h3 {
+        color: #fff;
+    }
 }
   
 .leftInnerContainer {
@@ -14,11 +19,13 @@
 }
   
 .onlineIcon {
-    margin-right: 5%;
+    margin-right: 15px;
+    margin-left: 15px;
 }
 
 .desc {
-    color: #b7b6b6;
-    margin-left: 2%;
+    font-size: 14px;
+    margin-right: 10px;
+    color: #000000d5;
+    white-space: nowrap;
 }
-  

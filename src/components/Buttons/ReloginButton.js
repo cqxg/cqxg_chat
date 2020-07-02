@@ -8,9 +8,11 @@ import './Button.scss';
 
 const ReloginButton = () => (
     <NavLink to='/'>
-        <Button type='primary' size='small'>
-            {RELOGIN}
-        </Button>
+        <div className='relogin__btn--wrapper'>
+            <Button type='primary' size='small'>
+                {RELOGIN}
+            </Button>
+        </div>
     </NavLink>
 );
 

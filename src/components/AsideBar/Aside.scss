@@ -3,15 +3,26 @@
     flex-direction: column;
     justify-content: space-between;
     margin-left: 100px;
-    color: white;
     font-size: 25px;
+    color: white;
     height: 60%;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+
+    h2 {
+        margin-bottom: 0px;
+        font-size: 20px;
+        font-weight: bold;
+    }
 }
   
 .activeContainer {
     display: flex;
     align-items: center;
     margin-bottom: 50%;
+
+    img {
+        padding-left: 10px;
+    }
 }
   
 .activeItem {
@@ -19,17 +30,7 @@
     align-items: center;
     margin-top: 10px;
 }
-  
-.activeContainer img {
-    padding-left: 10px;
-}
-  
-.asideBar h2 {
-    margin-bottom: 0px;
-    font-size: 20px;
-    font-weight: bold;
-}
-  
+    
 @media (min-width: 320px) and (max-width: 1200px) {
     .asideBar {
         display: none;

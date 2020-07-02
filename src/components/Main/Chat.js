@@ -20,7 +20,7 @@ const Chat = () => {
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
 
-    const ENDPOINT = 'https://project-chat-application.herokuapp.com/';
+    const ENDPOINT = 'https://cqxg-chat-server.herokuapp.com/';
     useEffect(() => {
         //eslint-disable-next-line
         const { name, room } = queryString.parse(location.search);

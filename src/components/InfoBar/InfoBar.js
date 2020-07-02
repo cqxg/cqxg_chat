@@ -10,8 +10,8 @@ const InfoBar = ({ room }) => (
     <div className="infoBar">
         <div className="leftInnerContainer">
             <img className="onlineIcon" src={online} alt="online icon" />
+            <span className="desc">Room name:</span>
             <h3>{room}</h3>
-            <span className="desc">(room name)</span>
         </div>
         <ReloginButton />
     </div>

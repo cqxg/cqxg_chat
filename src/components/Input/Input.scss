@@ -1,16 +1,16 @@
 .input {
-    height: 40px;
+    height: 35px;
     width: 100%;
-    font-size: 16px;
+    padding: 10px;
+    font-size: 14px;
     line-height: 1.5;
-    padding: 6px 11px;
-    border-radius: 4px;
-    margin-bottom: 15px;
+    border-right: none;
     box-sizing: border-box;
-    background-image: none;
     background-color: #fff;
-    border: 1px solid #a5a5a5;
     color: rgba(0, 0, 0, 0.75);
+    border-top: 1px solid #a5a5a5;
+    border-left:  1px solid #a5a5a5;
+    border-bottom: 1px solid #a5a5a5;
 }
 
 .input:focus {
@@ -18,12 +18,21 @@
 }
 
 .input::placeholder {
+    padding-left: 5px;
     color: #bbbbbb;
+}
+
+.sendButton {
+    outline: none;
+    border:  1px solid #a5a5a5;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+}
+
+.sendButton:hover {
+    transition: 0.1s;
+    background: rgb(230, 230, 230);
 }
 
 .form {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
 }
