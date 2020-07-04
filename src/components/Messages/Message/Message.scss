@@ -4,7 +4,7 @@
     display: flex;
     max-width: 440px;
     margin-bottom: 15px;
-    margin-left: 5px;
+    margin-left: 15px;
 
     &__avatar {
         display: flex;
@@ -32,6 +32,7 @@
     }
 
     &__sender {
+        margin-left: 15px;      
         font-size: 12px;
         opacity: 0.5;
     }
@@ -70,6 +71,7 @@
         }
     
         #{$self}__bubble {
+          margin-left: 10px;
           background: #ffffff;
           border: 1px solid #ececec;
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.0220444);
@@ -80,6 +82,19 @@
           }
         }
       }
+}
+
+.greeting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .message__bubble {
+    background: #1b59bf;
+    box-shadow: 0px 5px 5px rgba(54, 116, 255, 0.197);
+    border-radius: 5px 5px 5px 5px;
+    padding: 5px;
+    margin-bottom: 8px;
+  }
 }
 
 @media (max-width: 600px) { 

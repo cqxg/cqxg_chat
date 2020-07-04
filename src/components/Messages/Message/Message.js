@@ -15,17 +15,24 @@ const Message = ({ message: { text, user }, name }) => {
     }
 
     return (
-        <div className={isSentByCurrentUser ? 'message--isme' : 'message'}>
-            <div className='message__avatar' >
-                <img alt='' src={AVATAR} />
-            </div>
-            <div className='message__content'>
+        user === 'admin' ? <div className='greeting'>
+            <div>
                 <div className='message__bubble'>
-                    <p className='message__text'>{ReactEmoji.emojify(text)}</p>
+                    <p className='message__text'>{text}</p>
                 </div>
-                <span className='message__sender'>{user}</span>
             </div>
-        </div>
+        </div> :
+            <div className={isSentByCurrentUser ? 'message--isme' : 'message'}>
+                <div className='message__avatar' >
+                    <img alt='' src={AVATAR} />
+                </div>
+                <div className='message__content'>
+                    <div className='message__bubble'>
+                        <p className='message__text'>{ReactEmoji.emojify(text)}</p>
+                    </div>
+                    <span className='message__sender'>{user}</span>
+                </div>
+            </div>
     );
 };
 
