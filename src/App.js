@@ -5,10 +5,10 @@ import Chat from './components/Main/Chat';
 import LoginForm from './components/LoginForm/LoginForm';
 
 const App = () => (
-    <BrowserRouter>
-        <Route exact path="/" component={() => <LoginForm />} />
-        <Route path="/chat" component={() => <Chat />} />
-    </BrowserRouter>
+  <BrowserRouter>
+    <Route exact path="/" component={() => <LoginForm />} />
+    <Route path="/chat" component={() => <Chat />} />
+  </BrowserRouter>
 );
 
 export default App;

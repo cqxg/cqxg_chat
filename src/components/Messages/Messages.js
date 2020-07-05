@@ -6,9 +6,9 @@ import Message from './Message/Message';
 import './Messages.scss';
 
 const Messages = ({ messages, name }) => (
-    <ScrollToBottom className="messages">
-        {messages.map((message, index) => <div key={index}><Message message={message} name={name} /></div>)}
-    </ScrollToBottom>
+  <ScrollToBottom className="messages">
+    {messages.map((message, index) => <div key={index}><Message message={message} name={name} /></div>)}
+  </ScrollToBottom>
 );
 
 export default Messages;
