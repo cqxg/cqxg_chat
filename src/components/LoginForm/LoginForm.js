@@ -12,6 +12,9 @@ import './LoginForm.scss';
 const LoginForm = () => {
   const [name, setName] = useState('');
   const [room, setRoom] = useState('');
+  const [validator, setValidator] = useState(false);
+
+  const validation = <span className='validator'>this name is reserved by the system!</span>
 
   return (
     <div className="wrapper">
@@ -23,13 +26,20 @@ const LoginForm = () => {
           </div>
           <Block>
             <Form className="login-form" action="/main">
-              <Form.Item>
+              <Form.Item >
                 <Input
-                  onChange={(event) => setName(event.target.value)}
+                  onChange={(event) => {
+                    if (event.target.value === 'admin') {
+                      setValidator(true);
+                    } else {
+                      setName(event.target.value)
+                    }
+                  }}
                   prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
                   placeholder="Username"
                   size="large"
                 />
+                {validator ? validation : null}
               </Form.Item>
               <Form.Item>
                 <Input
