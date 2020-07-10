@@ -1,21 +1,22 @@
 .outerContainer {
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   background: whitesmoke;
 }
 
 .container {
+  width: 35%;
+  height: 80%;
   display: flex;
+  background: #FFFFFF;
   flex-direction: column;
+  border-radius: 8px 8px 0 0;
   justify-content: space-between;
   border-left: 1px solid #eaeaea;
   border-right: 1px solid #eaeaea;
-  background: #FFFFFF;
-  border-radius: 8px 8px 0 0;
-  height: 80%;
-  width: 35%;
+  box-shadow: 0px 5px 5px rgba(54, 116, 255, 0.197);
 }
 
 ::-webkit-scrollbar-track {

@@ -7,16 +7,23 @@
     justify-content: space-between;
 
     h3 {
-        color: #fff;
+        color: whitesmoke;
         white-space: nowrap;
     }
 }
   
 .leftInnerContainer {
-    flex: 0.5;
     display: flex;
-    color: white;
+    height: 24px;
+    margin-top: 5px;
+    padding: 0 7px;
+    font-size: 14px;
     align-items: center;
+    border-color: #1890ff;
+    background-color: #1890ff;
+    border-radius: 0 4px 4px 0;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
 }
   
 .onlineIcon {
@@ -25,8 +32,8 @@
 }
 
 .desc {
+    color: white;
     font-size: 14px;
     margin-right: 10px;
-    color: #000000d5;
     white-space: nowrap;
 }

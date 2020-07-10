@@ -86,14 +86,15 @@
 
 .greeting {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
   .message__bubble {
-    background: #1b59bf;
-    box-shadow: 0px 5px 5px rgba(54, 116, 255, 0.197);
-    border-radius: 5px 5px 5px 5px;
     padding: 5px;
+    border-radius: 4px;
     margin-bottom: 8px;
+    background: #1890ff78;
+    box-shadow: 0px 5px 5px rgba(54, 116, 255, 0.197);
   }
 }
 

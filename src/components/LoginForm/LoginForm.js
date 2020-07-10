@@ -23,7 +23,7 @@ const LoginForm = () => {
           </div>
           <Block>
             <Form className="login-form" action="/main">
-              <Form.Item >
+              <Form.Item>
                 <Input
                   onChange={(event) => setName(event.target.value)}
                   prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
