@@ -6,6 +6,7 @@ import Input from '../Input/Input';
 import InfoBar from '../InfoBar/InfoBar';
 import AsideBar from '../AsideBar/AsideBar';
 import Messages from '../Messages/Messages';
+import Preloader from '../../utils/preloader';
 
 import './Main.scss';
 
@@ -58,12 +59,16 @@ const Chat = () => {
 
   return (
     <div className="outerContainer">
-      <div className="container">
+     {users ?
+     <>
+     <div className="container">
         <InfoBar room={room} />
         <Messages messages={messages} name={name} />
         <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
       </div>
       <AsideBar users={users} />
+      </>
+    : <Preloader />}
     </div>
   );
 };

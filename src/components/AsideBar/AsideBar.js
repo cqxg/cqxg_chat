@@ -1,14 +1,11 @@
 import React from 'react';
 
 import online from '../../utils/online.png';
-import Preloader from '../../utils/preloader';
 
 import './Aside.scss';
 
 const AsideBar = ({ users }) => (
   <div className="asideBar">
-    {users
-      ? (
         <div>
           <h2>People currently chatting:</h2>
           <div className="activeContainer">
@@ -22,8 +19,6 @@ const AsideBar = ({ users }) => (
             </h3>
           </div>
         </div>
-      )
-      : <Preloader />}
   </div>
 );
 
